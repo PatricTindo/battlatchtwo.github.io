@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BattLatch Configurator</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <section id="intro" class="intro">
+        <div class="intro-content">
+            <p class="intro-label">Configuration platform</p>
+            <h1>BattLatch</h1>
+            <p class="intro-subtitle">Battery Latch Configuration Tool</p>
+        </div>
+    </section>
+
+    <div id="transitionBlock" class="transition-block"></div>
+
+    <div id="app" class="app">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">B</div>
+
+                <div>
+                    <h2>BattLatch</h2>
+                    <p>Configurator</p>
+                </div>
+            </div>
+
+            <nav class="navigation">
+                <button class="nav-item active" data-page="dashboard">
+                    <span class="nav-icon">⌂</span>
+                    <span>Dashboard</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <span class="status-dot"></span>
+                <span>System ready</span>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <div>
+                    <p class="page-label">BattLatch control panel</p>
+                    <h1 id="pageTitle">Dashboard</h1>
+                </div>
+
+                <div class="connection-status">
+                    <span class="status-dot"></span>
+                    Standalone preview
+                </div>
+            </header>
+
+            <section id="pageContent" class="workspace">
+                <div class="empty-state">
+                    <div class="device-wrap">
+                        <div class="standalone-banner">Static prototype • no Node-RED required</div>
+                        <div class="device">
+                            <div id="lcdDisplay">
+                                <span id="lcdJob">JOB1</span>
+                                <span id="lcdDay">MON</span>
+                                <span id="lcdTime">02:28</span>
+                            </div>
+                            <img src="battlatch.png" class="device-image" alt="BattLatch device illustration">
+                            <div class="battery-status">
+                                <button id="batteryStatusButton" type="button">BATTERY</button>
+                                <span id="batteryValue">72%</span>
+                            </div>
+                            <button id="dayButton" type="button">DAY</button>
+                            <button id="hourButton" type="button">HOUR</button>
+                            <button id="minButton" type="button">MIN</button>
+                            <button id="clearButton" type="button">CLEAR</button>
+                            <button id="clockButton" type="button">CLOCK</button>
+                            <button id="enterButton" type="button">ENTER</button>
+                        </div>
+                        <div id="demoOutput" class="demo-output">Preview mode active. Device actions will be logged locally.</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
