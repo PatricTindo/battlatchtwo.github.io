@@ -311,7 +311,8 @@ body {
 
 .device {
     position: relative;
-    width: min(700px, 90vw);
+    width: min(700px, 100%);
+    container-type: inline-size;
 }
 
 .device {
@@ -324,13 +325,7 @@ button {
 }
 
 .nav-item,
-#batteryStatusButton,
-#dayButton,
-#hourButton,
-#minButton,
-#clearButton,
-#clockButton,
-#enterButton {
+#batteryStatusButton {
     min-height: 44px;
 }
 
@@ -346,8 +341,10 @@ button {
 #clockButton,
 #enterButton {
     position: absolute;
-    width: 70px;
-    height: 40px;
+    width: clamp(44px, 10%, 70px);
+    aspect-ratio: 1.45;
+    height: auto;
+    padding: 0;
     color: yellow;
     border: none;
     border-radius: 50%;
@@ -416,46 +413,46 @@ button {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 12px;
+    padding: 0;
     font-family: "Digital7";
-    font-size: 32px;
+    font-size: clamp(16px, 4.5cqw, 32px);
     color: rgba(15, 15, 15, 0.8);
     user-select: none;
 }
 
 #lcdJob {
-    position: absolute;
-    left: 46px;
+    flex: 0 0 31%;
 }
 
 #lcdDay {
-    position: absolute;
-    left: 110px;
+    flex: 0 0 31%;
+    text-align: center;
 }
 
 #lcdTime {
-    position: absolute;
-    left: 170px;
+    flex: 0 0 38%;
+    text-align: right;
 }
 
 .battery-status {
     display: flex;
     align-items: center;
-    gap: 12px;
     position: absolute;
     left: 46%;
     top: 23%;
     transform: translateX(-50%);
+    gap: clamp(6px, 1.5cqw, 12px);
 }
 
 #batteryStatusButton {
-    padding: 10px 16px;
+    padding: clamp(6px, 1.5cqw, 10px) clamp(10px, 2.2cqw, 16px);
     border: 1px solid rgba(255, 255, 255, 0.6);
     border-radius: 999px;
     background: linear-gradient(180deg, #ffffff 0%, #edf3ff 100%);
     color: #2f4668;
     cursor: pointer;
     font-weight: 700;
+    font-size: clamp(0.65rem, 1.8cqw, 0.9rem);
     letter-spacing: 0.08rem;
     box-shadow: 0 8px 16px rgba(31, 41, 55, 0.08);
 }
