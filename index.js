@@ -56,6 +56,10 @@ function changePage(pageName) {
         <div class="empty-state">
             <div class="device-wrap">
                 <div class="standalone-banner">Static prototype • no Node-RED required</div>
+                <div class="battery-status">
+                    <button id="batteryStatusButton" type="button">BATTERY</button>
+                    <span id="batteryValue">72%</span>
+                </div>
                 <div class="device">
                     <div id="lcdDisplay">
                         <span id="lcdJob">JOB1</span>
@@ -63,10 +67,6 @@ function changePage(pageName) {
                         <span id="lcdTime">02:28</span>
                     </div>
                     <img src="battlatch.png" class="device-image" alt="BattLatch device illustration">
-                    <div class="battery-status">
-                        <button id="batteryStatusButton" type="button">BATTERY</button>
-                        <span id="batteryValue">72%</span>
-                    </div>
                     <button id="dayButton" type="button">DAY</button>
                     <button id="hourButton" type="button">HOUR</button>
                     <button id="minButton" type="button">MIN</button>

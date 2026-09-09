@@ -260,12 +260,14 @@ body {
 
 .workspace {
     flex: 1;
+    min-width: 0;
     padding: 42px;
     overflow: auto;
 }
 
 .empty-state {
     min-height: 100%;
+    min-width: 0;
     display: grid;
     place-items: center;
     border: 2px dashed #d9e0ea;
@@ -276,6 +278,7 @@ body {
 
 .device-wrap {
     width: 100%;
+    min-width: 0;
     max-width: 820px;
     display: flex;
     flex-direction: column;
@@ -311,7 +314,9 @@ body {
 
 .device {
     position: relative;
-    width: min(700px, 100%);
+    width: 100%;
+    max-width: 700px;
+    min-width: 0;
     container-type: inline-size;
 }
 
@@ -331,6 +336,8 @@ button {
 
 .device-image {
     width: 100%;
+    max-width: 100%;
+    height: auto;
     display: block;
 }
 
@@ -341,8 +348,8 @@ button {
 #clockButton,
 #enterButton {
     position: absolute;
-    width: clamp(44px, 10%, 70px);
-    aspect-ratio: 1.45;
+    width: 7.7%;
+    aspect-ratio: 1.65;
     height: auto;
     padding: 0;
     color: yellow;
@@ -350,6 +357,7 @@ button {
     border-radius: 50%;
     background: red;
     cursor: pointer;
+    font-size: clamp(6px, 1.4cqw, 12px);
     transition: transform 0.08s ease;
 }
 
@@ -372,75 +380,75 @@ button {
     background: rgba(128, 0, 32, 1.0);
 }
 #dayButton {
-    left: 23%;
-    top: 50%;
+    left: 25%;
+    top: 51%;
 }
 
 #hourButton {
-
-    left: 36%;
-    top: 50%;
+    left: 37%;
+    top: 51%;
 }
 
 #minButton {
-    left: 48%;
-    top: 50%;
+    left: 49%;
+    top: 51%;
 }
 
 #clearButton {
-    left: 23%;
+    left: 25%;
     top: 58%;
 }
 
 #clockButton {
-    left: 36%;
+    left: 37%;
     top: 58%;
 }
 
 
 #enterButton {
-    left: 48%;
+    left: 49%;
     top: 58%;
 }
 
 
 #lcdDisplay {
     position: absolute;
-    left: 21%;
-    top: 37%;
-    width: 42%;
-    height: 11%;
+    z-index: 1;
+    left: 25.5%;
+    top: 39%;
+    width: 30%;
+    height: 7%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: clamp(1px, 0.8cqw, 5px);
     align-items: center;
+    overflow: hidden;
     padding: 0;
     font-family: "Digital7";
-    font-size: clamp(16px, 4.5cqw, 32px);
-    color: rgba(15, 15, 15, 0.8);
+    font-size: clamp(10px, 4.6cqw, 26px);
+    line-height: 1;
+    color: rgba(8, 8, 8, 0.9);
+    white-space: nowrap;
     user-select: none;
 }
 
 #lcdJob {
-    flex: 0 0 31%;
+    flex: 0 0 auto;
 }
 
 #lcdDay {
-    flex: 0 0 31%;
+    flex: 0 0 auto;
     text-align: center;
 }
 
 #lcdTime {
-    flex: 0 0 38%;
+    flex: 0 0 auto;
     text-align: right;
 }
 
 .battery-status {
     display: flex;
     align-items: center;
-    position: absolute;
-    left: 46%;
-    top: 23%;
-    transform: translateX(-50%);
     gap: clamp(6px, 1.5cqw, 12px);
 }
 
