@@ -314,6 +314,26 @@ body {
     width: min(700px, 90vw);
 }
 
+.device {
+    touch-action: manipulation;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+.nav-item,
+#batteryStatusButton,
+#dayButton,
+#hourButton,
+#minButton,
+#clearButton,
+#clockButton,
+#enterButton {
+    min-height: 44px;
+}
+
 .device-image {
     width: 100%;
     display: block;
